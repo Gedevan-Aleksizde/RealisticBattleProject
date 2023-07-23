@@ -88,10 +88,10 @@ namespace RBM
             RBMConfig.RBMConfig.LoadConfig();
             //ApplyHarmonyPatches();
 
-            TaleWorlds.MountAndBlade.Module.CurrentModule.AddInitialStateOption(new InitialStateOption("RbmConfiguration", new TextObject("RBM Configuration"), 9999, delegate
+            TaleWorlds.MountAndBlade.Module.CurrentModule.AddInitialStateOption(new InitialStateOption("RbmConfiguration", GameTexts.FindText("str_rbm_menu", "title"), 9999, delegate
             {
                 ScreenManager.PushScreen(new RBMConfig.RBMConfigScreen());
-            }, () => (false, new TextObject("RBM Configuration"))));
+            }, () => (false, GameTexts.FindText("str_rbm_menu", "title"))));
         }
 
         protected override void OnApplicationTick(float dt)

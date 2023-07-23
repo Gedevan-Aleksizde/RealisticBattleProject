@@ -15,6 +15,7 @@ using TaleWorlds.CampaignSystem.Settlements;
 using TaleWorlds.CampaignSystem.TournamentGames;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
+using TaleWorlds.Localization;
 
 namespace RBMTournament
 {
@@ -702,13 +703,13 @@ namespace RBMTournament
                                 int rollNeeded = 100 - MathF.Round(im.ProductionDropScore);
                                 if (roll >= rollNeeded)
                                 {
-                                    InformationManager.DisplayMessage(new InformationMessage("Congratulations, you successfully rolled for " + im.Name + " item modifier, rolled:" + roll + " needed: " + rollNeeded));
+                                    InformationManager.DisplayMessage(new InformationMessage(GetTourneyMsgText("congrats", im.Name, roll, rollNeeded)));
                                     eePrize.SetModifier(im);
                                     break;
                                 }
                                 else
                                 {
-                                    InformationManager.DisplayMessage(new InformationMessage("You missed roll for " + im.Name + " item modifier, rolled:" + roll + " needed: " + rollNeeded));
+                                    InformationManager.DisplayMessage(new InformationMessage(GetTourneyMsgText("missed_roll", im.Name, roll, rollNeeded)));
                                 }
                             }
                         }
@@ -825,6 +826,10 @@ namespace RBMTournament
                     return true;
                 }
             }
+        }
+        private static string GetTourneyMsgText(string id, TextObject itemName, int roll, int rollNeeded)
+        {
+            return GameTexts.FindText("str_rbm_tourney_msg", id).SetTextVariable("name", itemName).SetTextVariable("roll", roll).SetTextVariable("rollneeded", rollNeeded).ToString();
         }
     }
 }

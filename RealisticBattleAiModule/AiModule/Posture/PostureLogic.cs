@@ -201,11 +201,11 @@ namespace RBMAI
                                         {
                                             if (victimAgent.IsPlayerControlled)
                                             {
-                                                InformationManager.DisplayMessage(new InformationMessage("Posture break: Posture depleted, " + MathF.Floor(healthDamage) + " damage crushed through", Color.FromUint(4282569842u)));
+                                                InformationManager.DisplayMessage(new InformationMessage(GameTexts.FindText("str_rbm_posture_msg", "posture_break").SetTextVariable("damage_amount", MathF.Floor(healthDamage)).ToString(), Color.FromUint(4282569842u)));
                                             }
                                             if (attackerAgent.IsPlayerControlled)
                                             {
-                                                InformationManager.DisplayMessage(new InformationMessage("Enemy Posture break: Posture depleted, " + MathF.Floor(healthDamage) + " damage crushed through", Color.FromUint(4282569842u)));
+                                                InformationManager.DisplayMessage(new InformationMessage(GameTexts.FindText("str_rbm_posture_msg", "enemy_posture_break").SetTextVariable("damage_amount", MathF.Floor(healthDamage)).ToString(), Color.FromUint(4282569842u)));
                                             }
                                             if (!victimAgent.HasMount)
                                             {

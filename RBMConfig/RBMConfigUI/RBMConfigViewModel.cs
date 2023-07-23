@@ -1,5 +1,6 @@
 ﻿// CunningLords.Interaction.CunningLordsMenuViewModel
 using System.Collections.Generic;
+using TaleWorlds.Core;
 using TaleWorlds.Core.ViewModelCollection.Selector;
 using TaleWorlds.Library;
 using TaleWorlds.Localization;
@@ -58,30 +59,40 @@ namespace RBMConfig
         {
             _doneText = new TextObject("{=ATDone}Done").ToString();
             _cancelText = new TextObject("{=ATCancel}Cancel").ToString();
+            TextObject GetMenuText(string variation_id)
+            {
+                return GameTexts.FindText("str_rbm_menu", variation_id);
+            }
+            TextObject GetMenuValueText(string variation_id, string status_id = null)
+            {
+                TextObject text = GameTexts.FindText("str_rbm_value", variation_id);
+                if (status_id != null) text.SetTextVariable("status", GameTexts.FindText("str_rbm_value", status_id).ToString());
+                return text;
+            }
             RefreshValues();
             //RbmConfigData data;
-            List<string> troopOverhaulOnOff = new List<string> { "Inactive", "Active (Recommended)", };
-            ActiveTroopOverhaulText = new TextViewModel(new TextObject("Troop Overhaul"));
+            List<TextObject> troopOverhaulOnOff = new List<TextObject> { GetMenuValueText("inactive"), GetMenuValueText("active", "recommended") };
+            ActiveTroopOverhaulText = new TextViewModel(GetMenuText("troop_overhaul"));
             ActiveTroopOverhaul = new SelectorVM<SelectorItemVM>(troopOverhaulOnOff, 0, null);
 
-            List<string> rangedReloadSpeed = new List<string> { "Vanilla", "Realistic", "Semi-realistic (Default)" };
-            RangedReloadSpeedText = new TextViewModel(new TextObject("Ranged reload speed"));
+            List<TextObject> rangedReloadSpeed = new List<TextObject> { GetMenuValueText("vanilla"), GetMenuValueText("realistic"), GetMenuValueText("semi_realistic", "default") };
+            RangedReloadSpeedText = new TextViewModel(GetMenuText("reload_speed"));
             RangedReloadSpeed = new SelectorVM<SelectorItemVM>(rangedReloadSpeed, 0, null);
 
-            List<string> passiveShoulderShields = new List<string> { "Disabled (Default)", "Enabled" };
-            PassiveShoulderShieldsText = new TextViewModel(new TextObject("Passive Shoulder Shields"));
+            List<TextObject> passiveShoulderShields = new List<TextObject> { GetMenuValueText("disabled", "default"), GetMenuValueText("enabled") };
+            PassiveShoulderShieldsText = new TextViewModel(GetMenuText("shoulder_shield"));
             PassiveShoulderShields = new SelectorVM<SelectorItemVM>(passiveShoulderShields, 0, null);
 
-            List<string> betterArrowVisuals = new List<string> { "Disabled", "Enabled (Default)" };
-            BetterArrowVisualsText = new TextViewModel(new TextObject("Better Arrow Visuals"));
+            List<TextObject> betterArrowVisuals = new List<TextObject> { GetMenuValueText("disabled"), GetMenuValueText("enabled", "default") };
+            BetterArrowVisualsText = new TextViewModel(GetMenuText("better_arrow"));
             BetterArrowVisuals = new SelectorVM<SelectorItemVM>(betterArrowVisuals, 0, null);
 
-            List<string> armorStatusUIEnabled = new List<string> { "Disabled", "Enabled (Default)", };
-            ArmorStatusUIEnabledText = new TextViewModel(new TextObject("Armor Status GUI"));
+            List<TextObject> armorStatusUIEnabled = new List<TextObject> { GetMenuValueText("disabled"), GetMenuValueText("enabled", "default") };
+            ArmorStatusUIEnabledText = new TextViewModel(GetMenuText("status_gui"));
             ArmorStatusUIEnabled = new SelectorVM<SelectorItemVM>(armorStatusUIEnabled, 0, null);
 
-            List<string> realisticArrowArc = new List<string> { "Disabled (Default)", "Enabled", };
-            RealisticArrowArcText = new TextViewModel(new TextObject("Realistic Arrow Arc"));
+            List<TextObject> realisticArrowArc = new List<TextObject> { GetMenuValueText("disabled", "default"), GetMenuValueText("enabled") };
+            RealisticArrowArcText = new TextViewModel(GetMenuText("arrow_arc"));
             RealisticArrowArc = new SelectorVM<SelectorItemVM>(realisticArrowArc, 0, null);
 
             if (RBMConfig.troopOverhaulActive)
@@ -142,20 +153,20 @@ namespace RBMConfig
                 RealisticArrowArc.SelectedIndex = 0;
             }
 
-            List<string> postureOptions = new List<string> { "Disabled", "Enabled (Default)" };
-            PostureSystemEnabledText = new TextViewModel(new TextObject("Posture System"));
+            List<TextObject> postureOptions = new List<TextObject> { GetMenuValueText("disabled"), GetMenuValueText("enabeld", "default") };
+            PostureSystemEnabledText = new TextViewModel(GetMenuText("posture_system"));
             PostureSystemEnabled = new SelectorVM<SelectorItemVM>(postureOptions, 0, null);
 
-            List<string> playerPostureMultiplierOptions = new List<string> { "1x (Default)", "1.5x", "2x" };
-            PlayerPostureMultiplierText = new TextViewModel(new TextObject("Player Posture Multiplier"));
+            List<TextObject> playerPostureMultiplierOptions = new List<TextObject> { GetMenuValueText("1x", "default"), GetMenuValueText("1_5x"), GetMenuValueText("2x") };
+            PlayerPostureMultiplierText = new TextViewModel(GetMenuText("posture_mult"));
             PlayerPostureMultiplier = new SelectorVM<SelectorItemVM>(playerPostureMultiplierOptions, 0, null);
 
-            List<string> postureGUIOptions = new List<string> { "Disabled", "Enabled (Default)" };
-            PostureGUIEnabledText = new TextViewModel(new TextObject("Posture GUI"));
+            List<TextObject> postureGUIOptions = new List<TextObject> { GetMenuValueText("disabled"), GetMenuValueText("enabled", "default") };
+            PostureGUIEnabledText = new TextViewModel(GetMenuText("posture_gui"));
             PostureGUIEnabled = new SelectorVM<SelectorItemVM>(postureGUIOptions, 0, null);
 
-            List<string> vanillaCombatAiOptions = new List<string> { "Disabled (Default)", "Enabled" };
-            VanillaCombatAiText = new TextViewModel(new TextObject("Vanilla AI Block/Parry/Attack"));
+            List<TextObject> vanillaCombatAiOptions = new List<TextObject> { GetMenuValueText("disabled", "default"), GetMenuValueText("enabled")};
+            VanillaCombatAiText = new TextViewModel(GetMenuText("combat_ai"));
             VanillaCombatAi = new SelectorVM<SelectorItemVM>(vanillaCombatAiOptions, 0, null);
 
             if (RBMConfig.playerPostureMultiplier == 1f)
@@ -198,13 +209,13 @@ namespace RBMConfig
                 VanillaCombatAi.SelectedIndex = 0;
             }
 
-            List<string> rbmCombatEnabledOptions = new List<string> { "Disabled", "Enabled (Default)" };
+            List<TextObject> rbmCombatEnabledOptions = new List<TextObject> { GetMenuValueText("disabled"), GetMenuValueText("enabled", "default") };
             RBMCombatEnabled = new SelectorVM<SelectorItemVM>(rbmCombatEnabledOptions, 0, null);
 
-            List<string> rbmAiEnabledOptions = new List<string> { "Disabled", "Enabled (Default)" };
+            List<TextObject> rbmAiEnabledOptions = new List<TextObject> { GetMenuValueText("disabled"), GetMenuValueText("enabled", "default") };
             RBMAIEnabled = new SelectorVM<SelectorItemVM>(rbmAiEnabledOptions, 0, null);
 
-            List<string> rbmTournamentEnabledOptions = new List<string> { "Disabled", "Enabled (Default)" };
+            List<TextObject> rbmTournamentEnabledOptions = new List<TextObject> { GetMenuValueText("disabled"), GetMenuValueText("enabled", "default") };
             RBMTournamentEnabled = new SelectorVM<SelectorItemVM>(rbmTournamentEnabledOptions, 0, null);
 
             if (RBMConfig.rbmCombatEnabled)
