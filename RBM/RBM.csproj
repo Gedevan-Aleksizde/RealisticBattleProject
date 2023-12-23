@@ -98,19 +98,12 @@
   <!-- Post-Build -->
   <PropertyGroup>
     <PostBuildEvent>xcopy /d /y "$(SolutionDir)RBMXML\ModuleData\RBM_spear_managed_core_parameters.xml" "$(SolutionDir)..\RBM\ModuleData\"
-
 xcopy /d /y "$(SolutionDir)RBMXML\ModuleData\RBM_spear_combat_parameters.xml" "$(SolutionDir)..\RBM\ModuleData\"
-
 xcopy /d /y "$(SolutionDir)RBMXML\ModuleData\RBM_bow_shields.xml" "$(SolutionDir)..\RBM\ModuleData\"
-
 xcopy /d /y "$(SolutionDir)RBMXML\ModuleData\RBM_module_strings.xml" "$(SolutionDir)..\RBM\ModuleData\"
-
 xcopy /d /y "$(SolutionDir)RBMXML\ModuleData\project.mbproj" "$(SolutionDir)..\RBM\ModuleData\"
-
 xcopy /y /s /e "$(SolutionDir)RBMXML\ModuleData\Languages" "$(SolutionDir)..\RBM\ModuleData\Languages"
-
 xcopy /d /y "$(SolutionDir)RBMXML\GUI\Prefabs\" "$(SolutionDir)..\RBM\GUI\Prefabs\"
-
 xcopy /d /y "$(SolutionDir)RBMXML\GUI\Brushes\" "$(SolutionDir)..\RBM\GUI\Brushes\"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
