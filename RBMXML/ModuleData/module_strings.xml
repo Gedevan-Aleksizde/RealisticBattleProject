@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <strings>
+        <!-- Configuration -->
+        <string id="str_rbm_menu.title" text="{=RBM.Conf000}RBM Configuration" />
+        <string id="str_rbm_menu.troop_overhaul" text="{=RBM.Conf001}Troop Overhaul" />
+        <string id="str_rbm_menu.reload_speed" text="{=RBM.Conf002}Ranged reload speed" />
+        <string id="str_rbm_menu.shoulder_shield" text="{=RBM.Conf003}Passive Shoulder Shields" />
+        <string id="str_rbm_menu.better_arrow" text="{=RBM.Conf004}Better Arrow Visuals" />
+        <string id="str_rbm_menu.status_gui" text="{=RBM.Conf005}Armor Status GUI" />
+        <string id="str_rbm_menu.arrow_arc" text="{=RBM.Conf006}Realistic Arrow Arc" />
+        <string id="str_rbm_menu.posture_system" text="{=RBM.Conf007}Posture System" />
+        <string id="str_rbm_menu.posture_mult" text="{=RBM.Conf008}Player Posture Multiplier" />
+        <string id="str_rbm_menu.posture_gui" text="{=RBM.Conf009}Posture GUI" />
+        <string id="str_rbm_menu.combat_ai" text="{=RBM.Conf010}Vanilla AI Block/Parry/Attack" />
+        <string id="str_rbm_value.inactive" text="{=RBM.Val001}Inactive{status}" />
+        <string id="str_rbm_value.active" text="{=RBM.Val002}Active{status}" />
+        <string id="str_rbm_value.recommended" text="{=RBM.Val003} (Recommended)" />
+        <string id="str_rbm_value.default" text="{=RBM.Val004} (Default)" />
+        <string id="str_rbm_value.vanilla" text="{=RBM.Val005}Vanilla{status}" />
+        <string id="str_rbm_value.realistic" text="{=RBM.Val006}Realistic{status}" />
+        <string id="str_rbm_value.semi_realistic" text="{=RBM.Val007}Semi-Realistic{status}" />
+        <string id="str_rbm_value.disabled" text="{=RBM.Val008}Disabled{status}" />
+        <string id="str_rbm_value.enabled" text="{=RBM.Val009}Enabled{status}" />
+        <string id="str_rbm_value.1x" text="{=RBM.Val010}1x{status}" />
+        <string id="str_rbm_value.1_5x" text="{=RBM.Val011}1.5x{status}" />
+        <string id="str_rbm_value.2x" text="{=RBM.Val012}2x{status}" />
+        <!-- Tournament -->
+        <string id="str_rbm_tourney_msg.congrats" text="{=RBM.Tourney001}Congratulations, you successfully rolled for {name} item modifier, rolled: {roll} needed: {rollneeded}" />
+        <string id="str_rbm_tourney_msg.missed_roll" text="{=RBM.Tourney002}You missed roll for {name} item modifier, rolled: {roll} needed: {rollneeded}" />
+        <!-- Posture -->
+        <string id="str_rbm_posture.posture" text="{=RBM.Posture000}Posture" />
+        <string id="str_rbm_posture_msg.posture_break" text="{=RBM.Posture001}Posture break: Posture depleted {damage_amount} damage crushed through" />
+        <string id="str_rbm_posture_msg.enemy_posture_break" text="{=RBM.Posture002}Enemy Posture break: Posture depleted {damage_amount} damage crushed through" />        
+        <!-- Item Stats -->
+        <string id="str_rbm_item_stats.title" text="{=RBM.Stats000}RBM Stats" />
+        <string id="str_rbm_item_stats.weight_range_dmg" text="{=RBM.Stats001}Ideal Ammo Weight Range/Damage, grams: {weight}" />
+        <string id="str_rbm_item_stats.missile_speed" text="{=RBM.Stats002}Initial Missile Speed, m/s:  {speed}" />
+        <string id="str_rbm_item_stats.relevant_skill" text="{=RBM.Stats003}Relevant Skill: {skill} {value}" />
+        <string id="str_rbm_item_stats.swing_dmg_factor" text="{=RBM.Stats004}Swing Damage Factor:" />
+        <string id="str_rbm_item_stats.thrust_dmg_factor" text="{=RBM.Stats005}Thrust Damage Factor:" />
+        <string id="str_rbm_item_stats.swing_spd" text="{=RBM.Stats004}Swing Speed, m/s:" />
+        <string id="str_rbm_item_stats.thrust_spd" text="{=RBM.Stats005}Thrust Speed, m/s:" />
+        <string id="str_rbm_item_stats.swing_sweet" text="{=RBM.Stats006}Swing Sweet Spot, %:" />
+        <string id="str_rbm_item_stats.swing_dmg_hover" text="{=RBM.Stats007}Swing Damage (Hover)" />
+        <string id="str_rbm_item_stats.thrust_dmg_hover" text="{=RBM.Stats008}Thrust Damage (Hover)" />
+        <string id="str_rbm_item_stats.head_armor" text="{=RBM.Stats009}Head Armor: {value}" />
+        <string id="str_rbm_item_stats.neck_armor" text="{=RBM.Stats009}Neck Armor: {value}" />
+        <string id="str_rbm_item_stats.shoulder_armor" text="{=RBM.Stats009}Shoulder Armor: {value}" />
+        <string id="str_rbm_item_stats.chest_armor" text="{=RBM.Stats009}Chest Armor: {value}" />
+        <string id="str_rbm_item_stats.abdomen_armor" text="{=RBM.Stats009}Abdomen Armor: {value}" />
+        <string id="str_rbm_item_stats.arm_armor" text="{=RBM.Stats009}Arm Armor: {value}" />
+        <string id="str_rbm_item_stats.lower_shoulder_armor" text="{=RBM.Stats009}Lower Shoulder Armor: {value}" />
+        <string id="str_rbm_item_stats.lower_legs_armor" text="{=RBM.Stats009}Legs Armor: {value}" />
+
+        <string id="str_rbm_item_stats.item_stats" text="{=RBM.Stats010}A-Armor{newline}D-Damage Inflicted{newline}P-Penetrated Damage{newline}B-Blunt Focre Trauma" />
+        <string id="str_rbm_item_stats_dev.title" text="{=RBM.StatsDev000}RBM Developer Stats" />
+        <string id="str_rbm_item_stats_dev.scale_percent" text="{=RBM.StatsDev001}Scale Percentage:" />
+        <string id="str_rbm_item_stats_dev.weight" text="{=RBM.StatsDev002}Weight" />
+        <string id="str_rbm_item_stats_dev.length" text="{=RBM.StatsDev003}Length" />
+        <!-- Combat -->
+	</strings>
