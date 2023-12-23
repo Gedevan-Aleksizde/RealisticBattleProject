@@ -11,6 +11,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RBMCombat</RootNamespace>
     <AssemblyName>RBMCombat</AssemblyName>
+    <LangVersion>9.0</LangVersion>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
