@@ -720,8 +720,8 @@ namespace RBMCombat
                         sweetSpotOut = sweetSpot;
                         sweetSpotComparedOut = sweetSpotCompared;
 
-                        string combinedDamageString = "A-Armor\nD-Damage Inflicted\nP-Penetrated Damage\nB-Blunt Focre Trauma\n";
-                        string combinedDamageComparedString = "A-Armor\nD-Damage Inflicted\nP-Penetrated Damage\nB-Blunt Focre Trauma\n";
+                        string combinedDamageString = GameTexts.FindText("str_rbm_item_stats", "damage_detail_header").ToString();
+                        string combinedDamageComparedString = GameTexts.FindText("str_rbm_item_stats", "damage_detail_header").ToString();
                         for (float i = 0; i <= 100; i += 10)
                         {
                             if (shouldBreakNextTime)
@@ -780,8 +780,8 @@ namespace RBMCombat
 
                         bool shouldBreakNextTime = false;
 
-                        string combinedDamageString = "A-Armor\nD-Damage Inflicted\nP-Penetrated Damage\nB-Blunt Focre Trauma\n";
-                        string combinedDamageComparedString = "A-Armor\nD-Damage Inflicted\nP-Penetrated Damage\nB-Blunt Focre Trauma\n";
+                        string combinedDamageString = GameTexts.FindText("str_rbm_item_stats", "damage_detail_header").ToString();
+                        string combinedDamageComparedString = GameTexts.FindText("str_rbm_item_stats", "damage_detail_header").ToString();
                         for (float i = 0; i <= 100; i += 10)
                         {
                             if (shouldBreakNextTime)
@@ -848,14 +848,8 @@ namespace RBMCombat
 
                 if (!targetWeapon.IsEmpty && targetWeapon.Item.GetWeaponWithUsageIndex(targetWeaponUsageIndex) != null && targetWeapon.Item.GetWeaponWithUsageIndex(targetWeaponUsageIndex).IsShield)
                 {
-                    if (comparedWeapon.IsEmpty)
-                    {
-                        methodAddIntProperty.Invoke(__instance, new object[] { new TextObject("Shield Armor: "), targetWeapon.GetModifiedBodyArmor(), targetWeapon.GetModifiedBodyArmor() });
-                    }
-                    else
-                    {
-                        methodAddIntProperty.Invoke(__instance, new object[] { new TextObject("Shield Armor: "), targetWeapon.GetModifiedBodyArmor(), comparedWeapon.GetModifiedBodyArmor() });
-                    }
+                    int armor = comparedWeapon.IsEmpty ? targetWeapon.GetModifiedBodyArmor(): comparedWeapon.GetModifiedBodyArmor();
+                    methodAddIntProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "shield_armor"), armor, armor });
                 }
                 if (!targetWeapon.IsEmpty && targetWeapon.Item.GetWeaponWithUsageIndex(targetWeaponUsageIndex) != null && targetWeapon.Item.GetWeaponWithUsageIndex(targetWeaponUsageIndex).IsRangedWeapon)
                 {
@@ -882,16 +876,16 @@ namespace RBMCombat
 
                             int calculatedMissileSpeed = Utilities.calculateMissileSpeed(ammoWeightIdeal, targetWeapon.Item.GetWeaponWithUsageIndex(targetWeaponUsageIndex).ItemUsage, drawWeight);
 
-                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "RBM Stats", "", 1, null });
+                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, GameTexts.FindText("str_rbm_item_stats", "title").ToString().ToString(), "", 1, null });
 
-                            methodAddIntProperty.Invoke(__instance, new object[] { new TextObject("Ideal Ammo Weight Range/Damage, grams: "), MathF.Round(ammoWeightIdeal * 1000f), MathF.Round(ammoWeightIdeal * 1000f) });
-                            methodAddIntProperty.Invoke(__instance, new object[] { new TextObject("Initial Missile Speed, m/s: "), calculatedMissileSpeed, calculatedMissileSpeed });
+                            methodAddIntProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "weight_range_dmg"), MathF.Round(ammoWeightIdeal * 1000f), MathF.Round(ammoWeightIdeal * 1000f) });
+                            methodAddIntProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "missile_speed"), calculatedMissileSpeed, calculatedMissileSpeed });
 
                             //pierceArrows
                             bool shouldBreakNextTime = false;
                             float missileMagnitude = CalculateMissileMagnitude(WeaponClass.Arrow, ammoWeightIdeal, calculatedMissileSpeed, targetWeapon.GetModifiedThrustDamageForUsage(targetWeaponUsageIndex) + 100f, 1f, DamageTypes.Pierce);
-                            string combinedDamageString = "A-Armor\nD-Damage Inflicted\nP-Penetrated Damage\nB-Blunt Focre Trauma\n";
-                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "", "Missile Damage Pierce", 1, null });
+                            string combinedDamageString = GameTexts.FindText("str_rbm_item_stats", "damage_detail_header").ToString();
+                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "", "   ", 1, null });
                             for (float i = 0; i <= 100; i += 10)
                             {
                                 if (shouldBreakNextTime)
@@ -914,8 +908,8 @@ namespace RBMCombat
                             //cut arrows
                             shouldBreakNextTime = false;
                             missileMagnitude = CalculateMissileMagnitude(WeaponClass.Arrow, ammoWeightIdeal, calculatedMissileSpeed, targetWeapon.GetModifiedThrustDamageForUsage(targetWeaponUsageIndex) + 115f, 1f, DamageTypes.Cut);
-                            combinedDamageString = "A-Armor\nD-Damage Inflicted\nP-Penetrated Damage\nB-Blunt Focre Trauma\n";
-                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "", "Missile Damage Cut", 1, null });
+                            combinedDamageString = GameTexts.FindText("str_rbm_item_stats", "damage_detail_header").ToString();
+                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "", GameTexts.FindText("str_rbm_item_stats", "missile_dmg_cut").ToString(), 1, null });
                             for (float i = 0; i <= 100; i += 10)
                             {
                                 if (shouldBreakNextTime)
@@ -944,16 +938,16 @@ namespace RBMCombat
 
                             int calculatedMissileSpeed = Utilities.calculateMissileSpeed(ammoWeightIdeal, targetWeapon.Item.GetWeaponWithUsageIndex(targetWeaponUsageIndex).ItemUsage, drawWeight);
 
-                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "RBM Stats", "", 1, null });
+                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, GameTexts.FindText("str_rbm_item_stats", "title").ToString(), "", 1, null });
 
-                            methodAddIntProperty.Invoke(__instance, new object[] { new TextObject("Ideal Ammo Weight Range/Damage, grams: "), MathF.Round(ammoWeightIdeal * 1000f), MathF.Round(ammoWeightIdeal * 1000f) });
-                            methodAddIntProperty.Invoke(__instance, new object[] { new TextObject("Initial Missile Speed, m/s: "), calculatedMissileSpeed, calculatedMissileSpeed });
+                            methodAddIntProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "weight_range_dmg"), MathF.Round(ammoWeightIdeal * 1000f), MathF.Round(ammoWeightIdeal * 1000f) });
+                            methodAddIntProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "missile_speed"), calculatedMissileSpeed, calculatedMissileSpeed });
 
                             //pierce bolts
                             bool shouldBreakNextTime = false;
                             float missileMagnitude = CalculateMissileMagnitude(WeaponClass.Bolt, ammoWeightIdeal, calculatedMissileSpeed, targetWeapon.GetModifiedThrustDamageForUsage(targetWeaponUsageIndex) + 100f, 1f, DamageTypes.Pierce);
-                            string combinedDamageString = "A-Armor\nD-Damage Inflicted\nP-Penetrated Damage\nB-Blunt Force Trauma\n";
-                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "", "Missile Damage Pierce", 1, null });
+                            string combinedDamageString = GameTexts.FindText("str_rbm_item_stats", "damage_detail_header").ToString();
+                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "", GameTexts.FindText("str_rbm_item_stats", "missile_dmg_pierce").ToString(), 1, null });
                             for (float i = 0; i <= 100; i += 10)
                             {
                                 if (shouldBreakNextTime)
@@ -976,8 +970,8 @@ namespace RBMCombat
                             //cut bolts
                             shouldBreakNextTime = false;
                             missileMagnitude = CalculateMissileMagnitude(WeaponClass.Bolt, ammoWeightIdeal, calculatedMissileSpeed, targetWeapon.GetModifiedThrustDamageForUsage(targetWeaponUsageIndex) + 115f, 1f, DamageTypes.Cut);
-                            combinedDamageString = "A-Armor\nD-Damage Inflicted\nP-Penetrated Damage\nB-Blunt Focre Trauma\n";
-                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "", "Missile Damage Cut", 1, null });
+                            combinedDamageString = GameTexts.FindText("str_rbm_item_stats", "damage_detail_header").ToString();
+                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "", GameTexts.FindText("str_rbm_item_stats", "missile_dmg_cut").ToString(), 1, null });
                             for (float i = 0; i <= 100; i += 10)
                             {
                                 if (shouldBreakNextTime)
@@ -1001,15 +995,15 @@ namespace RBMCombat
                         {
                             int calculatedMissileSpeed = Utilities.assignThrowableMissileSpeedForMenu(targetWeapon.Weight, (int)Utilities.throwableCorrectionSpeed, effectiveSkill);
 
-                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "RBM Stats", "", 1, null });
-                            methodAddIntProperty.Invoke(__instance, new object[] { new TextObject("Relevant Skill: "), effectiveSkill, effectiveSkill });
-                            methodAddIntProperty.Invoke(__instance, new object[] { new TextObject("Initial Missile Speed, m/s: "), calculatedMissileSpeed, calculatedMissileSpeed });
+                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, GameTexts.FindText("str_rbm_item_stats", "title").ToString(), "", 1, null });
+                            methodAddIntProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "relevant_skill"), effectiveSkill, effectiveSkill });
+                            methodAddIntProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "missile_speed"), calculatedMissileSpeed, calculatedMissileSpeed });
 
                             //pierceArrows
                             bool shouldBreakNextTime = false;
                             float missileMagnitude = CalculateMissileMagnitude(WeaponClass.Javelin, targetWeapon.Weight, calculatedMissileSpeed, targetWeapon.GetModifiedThrustDamageForUsage(targetWeaponUsageIndex), 1f, targetWeapon.Item.GetWeaponWithUsageIndex(targetWeaponUsageIndex).ThrustDamageType);
-                            string combinedDamageString = "A-Armor\nD-Damage Inflicted\nP-Penetrated Damage\nB-Blunt Focre Trauma\n";
-                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "", "Missile Damage", 1, null });
+                            string combinedDamageString = GameTexts.FindText("str_rbm_item_stats", "damage_detail_header").ToString();
+                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "", GameTexts.FindText("str_rbm_item_stats", "missile_dmg").ToString(), 1, null });
                             float weaponDamageFactor = (float)Math.Sqrt(Utilities.getThrustDamageFactor(targetWeapon.Item.GetWeaponWithUsageIndex(targetWeaponUsageIndex), targetWeapon.ItemModifier));
                             for (float i = 0; i <= 100; i += 10)
                             {
@@ -1036,9 +1030,9 @@ namespace RBMCombat
                         {
                             int calculatedMissileSpeed = Utilities.assignThrowableMissileSpeedForMenu(targetWeapon.Weight, 0, effectiveSkill);
 
-                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "RBM Stats", "", 1, null });
-                            methodAddIntProperty.Invoke(__instance, new object[] { new TextObject("Relevant Skill: "), effectiveSkill, effectiveSkill });
-                            methodAddIntProperty.Invoke(__instance, new object[] { new TextObject("Initial Missile Speed, m/s: "), calculatedMissileSpeed, calculatedMissileSpeed });
+                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, GameTexts.FindText("str_rbm_item_stats", "title").ToString(), "", 1, null });
+                            methodAddIntProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "relevant_skill"), effectiveSkill, effectiveSkill });
+                            methodAddIntProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "missile_speed"), calculatedMissileSpeed, calculatedMissileSpeed });
 
                             //pierceArrows
                             bool shouldBreakNextTime = false;
@@ -1047,8 +1041,8 @@ namespace RBMCombat
                             {
                                 missileMagnitude = CalculateMissileMagnitude(targetWeapon.Item.GetWeaponWithUsageIndex(targetWeaponUsageIndex).WeaponClass, targetWeapon.Weight, calculatedMissileSpeed, targetWeapon.GetModifiedThrustDamageForUsage(targetWeaponUsageIndex), 1f, targetWeapon.Item.GetWeaponWithUsageIndex(targetWeaponUsageIndex).SwingDamageType);
                             }
-                            string combinedDamageString = "A-Armor\nD-Damage Inflicted\nP-Penetrated Damage\nB-Blunt Focre Trauma\n";
-                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "", "Missile Damage", 1, null });
+                            string combinedDamageString = GameTexts.FindText("str_rbm_item_stats", "damage_detail_header").ToString();
+                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "", GameTexts.FindText("str_rbm_item_stats", "missile_dmg").ToString(), 1, null });
                             float weaponDamageFactor = (float)Math.Sqrt(targetWeapon.Item.GetWeaponWithUsageIndex(targetWeaponUsageIndex).ThrustDamageFactor);
                             if (targetWeapon.Item.GetWeaponWithUsageIndex(targetWeaponUsageIndex).WeaponClass == WeaponClass.ThrowingAxe)
                             {
@@ -1094,38 +1088,38 @@ namespace RBMCombat
 
                     if (currentSelectedChar != null)
                     {
-                        methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "RBM Stats", "", 1, null });
+                        methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, GameTexts.FindText("str_rbm_item_stats", "title").ToString(), "", 1, null });
 
-                        methodAddIntProperty.Invoke(__instance, new object[] { new TextObject("Relevant Skill: "), relevantSkill, relevantSkill });
+                        methodAddIntProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "relevant_skill"), relevantSkill, relevantSkill });
 
-                        methodAddIntProperty.Invoke(__instance, new object[] { new TextObject("Swing Damage Factor:"), MathF.Round(swingDamageFactor * 100f), MathF.Round(swingDamageFactorCompared * 100f) });
-                        methodAddIntProperty.Invoke(__instance, new object[] { new TextObject("Thrust Damage Factor:"), MathF.Round(thrustDamageFactor * 100f), MathF.Round(thrustDamageFactorCompared * 100f) });
+                        methodAddIntProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "swing_dmg_factor"), MathF.Round(swingDamageFactor * 100f), MathF.Round(swingDamageFactorCompared * 100f) });
+                        methodAddIntProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "thrust_dmg_factor"), MathF.Round(thrustDamageFactor * 100f), MathF.Round(thrustDamageFactorCompared * 100f) });
 
-                        methodAddFloatProperty.Invoke(__instance, new object[] { new TextObject("Swing Speed, m/s:"), swingSpeed, swingSpeedCompred, false });
-                        methodAddFloatProperty.Invoke(__instance, new object[] { new TextObject("Thrust Speed, m/s: "), thrustSpeed, thrustSpeedCompred, false });
+                        methodAddFloatProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "swing_spd"), swingSpeed, swingSpeedCompred, false });
+                        methodAddFloatProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "thrust_spd"), thrustSpeed, thrustSpeedCompred, false });
 
                         if (targetWeapon.GetModifiedSwingDamageForUsage(targetWeaponUsageIndex) > 0f)
                         {
-                            methodAddIntProperty.Invoke(__instance, new object[] { new TextObject("Swing Sweet Spot, %: "), MathF.Floor(sweetSpotOut * 100f), MathF.Floor(sweetSpotComparedOut * 100f) });
+                            methodAddIntProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "swing_sweet"), MathF.Floor(sweetSpotOut * 100f), MathF.Floor(sweetSpotComparedOut * 100f) });
 
-                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "", "Swing Damage (Hover)", 1, null });
+                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "", GameTexts.FindText("str_rbm_item_stats", "swing_dmg_hover").ToString(), 1, null });
 
                             __instance.TargetItemProperties[__instance.TargetItemProperties.Count - 1].PropertyHint = new HintViewModel(new TextObject(swingCombinedStringOut));
                             if (!comparedWeapon.IsEmpty)
                             {
-                                methodCreateProperty.Invoke(__instance, new object[] { __instance.ComparedItemProperties, "", "Swing Damage (Hover)", 1, null });
+                                methodCreateProperty.Invoke(__instance, new object[] { __instance.ComparedItemProperties, "", GameTexts.FindText("str_rbm_item_stats", "swing_dmg_hover").ToString(), 1, null });
                                 __instance.ComparedItemProperties[__instance.ComparedItemProperties.Count - 1].PropertyHint = new HintViewModel(new TextObject(swingCombinedStringComparedOut));
                             }
                         }
 
                         if (targetWeapon.GetModifiedThrustDamageForUsage(targetWeaponUsageIndex) > 0f)
                         {
-                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "", "Thrust Damage (Hover)", 1, null });
+                            methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "", GameTexts.FindText("str_rbm_item_stats", "thrust_dmg_hover").ToString(), 1, null });
 
                             __instance.TargetItemProperties[__instance.TargetItemProperties.Count - 1].PropertyHint = new HintViewModel(new TextObject(thrustCombinedStringOut));
                             if (!comparedWeapon.IsEmpty)
                             {
-                                methodCreateProperty.Invoke(__instance, new object[] { __instance.ComparedItemProperties, "", "Thrust Damage (Hover)", 1, null });
+                                methodCreateProperty.Invoke(__instance, new object[] { __instance.ComparedItemProperties, "", GameTexts.FindText("str_rbm_item_stats", "thrust_dmg_hover").ToString(), 1, null });
                                 __instance.ComparedItemProperties[__instance.ComparedItemProperties.Count - 1].PropertyHint = new HintViewModel(new TextObject(thrustCombinedStringComparedOut));
                             }
                         }
@@ -1134,14 +1128,14 @@ namespace RBMCombat
                         {
                             if (targetWeapon.Item.WeaponDesign != null && targetWeapon.Item.WeaponDesign.UsedPieces != null && targetWeapon.Item.WeaponDesign.UsedPieces.Count() > 0)
                             {
-                                methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "RBM Developer Stats", "", 1, null });
+                                methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, GameTexts.FindText("str_rbm_item_stats_dev", "title").ToString(), "", 1, null });
 
                                 foreach (WeaponDesignElement wde in targetWeapon.Item.WeaponDesign.UsedPieces)
                                 {
                                     methodCreateProperty.Invoke(__instance, new object[] { __instance.TargetItemProperties, "", wde.CraftingPiece.StringId + " " + wde.CraftingPiece.Name, 1, null });
-                                    //methodAddIntProperty.Invoke(__instance, new object[] { new TextObject("Scale Percentage:"), wde.ScalePercentage, wde.ScalePercentage });
-                                    methodAddFloatProperty.Invoke(__instance, new object[] { new TextObject("Weight:"), wde.CraftingPiece.Weight, wde.CraftingPiece.Weight, false });
-                                    methodAddFloatProperty.Invoke(__instance, new object[] { new TextObject("Length:"), wde.CraftingPiece.Length, wde.CraftingPiece.Length, false });
+                                    //methodAddIntProperty.Invoke(__instance, new object[] {  GameTexts.FindText("str_rbm_item_stats_dev", "scale_percent").SetTextVariable(wde.ScalePercentage), wde.ScalePercentage, wde.ScalePercentage });
+                                    methodAddFloatProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats_dev", "weight"), wde.CraftingPiece.Weight, wde.CraftingPiece.Weight, false });
+                                    methodAddFloatProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats_dev", "length"), wde.CraftingPiece.Length, wde.CraftingPiece.Length, false });
                                 }
                             }
                         }
@@ -1160,6 +1154,10 @@ namespace RBMCombat
             combinedBodyString = "";
             combinedArmString = "";
             combinedLegString = "";
+            string GetArmorLabel(string variantId)
+            {
+                return GameTexts.FindText("str_rbm_item_stats", variantId).ToString();
+            }
             if (equipment != null)
             {
                 if (equipment != null)
@@ -1172,20 +1170,20 @@ namespace RBMCombat
                     float abdomenArmor = ArmorRework.GetBaseArmorEffectivenessForBodyPartRBMHuman(equipment, BoneBodyPartType.Abdomen);
                     float legsArmor = ArmorRework.GetBaseArmorEffectivenessForBodyPartRBMHuman(equipment, BoneBodyPartType.Legs);
 
-                    combinedHeadString += String.Format("{0,-32}", "Head Armor: ") + headArmor + "\n";
+                    combinedHeadString += String.Format("{0,-32}", GetArmorLabel("head_armor")) + headArmor + "\n";
                     if (!equipment[EquipmentIndex.Head].IsEmpty)
                     {
                         float faceArmor = equipment[EquipmentIndex.Head].GetModifiedBodyArmor();
 
-                        combinedHeadString += String.Format("{0,-33}", "Face Armor: ") + faceArmor + "\n";
+                        combinedHeadString += String.Format("{0,-33}", GetArmorLabel("face_armor")) + faceArmor + "\n";
                     }
-                    combinedHeadString += String.Format("{0,-32}", "Neck Armor: ") + neckArmor;
+                    combinedHeadString += String.Format("{0,-32}", GetArmorLabel("neck_armor")) + neckArmor;
 
-                    combinedBodyString += String.Format("{0,-28}", "Shoulder Armor: ") + shoulderArmor + "\n";
-                    combinedBodyString += String.Format("{0,-32}", "Chest Armor: ") + chestArmor + "\n";
-                    combinedBodyString += String.Format("{0,-27}", "Abdomen Armor: ") + abdomenArmor;
+                    combinedBodyString += String.Format("{0,-28}", GetArmorLabel("shoulder_armor")) + shoulderArmor + "\n";
+                    combinedBodyString += String.Format("{0,-32}", GetArmorLabel("chest_armor")) + chestArmor + "\n";
+                    combinedBodyString += String.Format("{0,-27}", GetArmorLabel("abdomen_armor")) + abdomenArmor;
 
-                    combinedArmString += String.Format("{0,-33}", "Arm Armor: ") + armArmor + "\n";
+                    combinedArmString += String.Format("{0,-33}", GetArmorLabel("arm_armor")) + armArmor + "\n";
                     if (!equipment[EquipmentIndex.Body].IsEmpty)
                     {
                         float underShoulderArmor = (equipment[EquipmentIndex.Body].GetModifiedArmArmor());
@@ -1193,10 +1191,10 @@ namespace RBMCombat
                         {
                             underShoulderArmor += equipment[EquipmentIndex.Cape].GetModifiedArmArmor();
                         }
-                        combinedArmString += String.Format("{0,-0}", "Lower Shoulder Armor: ") + underShoulderArmor;
+                        combinedArmString += String.Format("{0,-21}", GetArmorLabel("lower_shoulder_armor")) + underShoulderArmor;
                     }
 
-                    combinedLegString += String.Format("{0,-33}", "Legs Armor: ") + legsArmor;
+                    combinedLegString += String.Format("{0,-33}", GetArmorLabel("lower_legs_armor")) + legsArmor;
                 }
             }
         }

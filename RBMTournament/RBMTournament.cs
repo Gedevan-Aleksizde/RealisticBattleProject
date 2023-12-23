@@ -537,11 +537,11 @@ namespace RBMTournament
                     }
                     if (playerTier >= 5)
                     {
-                        InformationManager.DisplayMessage(new InformationMessage("Main tournament"));
+                        InformationManager.DisplayMessage(new InformationMessage(GameTexts.FindText("str_rbm_tourney_msg", "main").ToString()));
                     }
                     else
                     {
-                        InformationManager.DisplayMessage(new InformationMessage("Lower tier tournament: Tier " + playerTier));
+                        InformationManager.DisplayMessage(new InformationMessage(GameTexts.FindText("str_rbm_tourney_msg", "lower_tier").SetTextVariable("tier", playerTier).ToString()));
                     }
                     //CultureObject cultureMercenaryObject = Game.Current.ObjectManager.GetObject<CultureObject>("neutral");
                     CultureObject culture = Settlement.CurrentSettlement.Culture;

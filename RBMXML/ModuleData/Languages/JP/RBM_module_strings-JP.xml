@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+    <tags>
+     <tag language="日本語"/>
+    </tags>
+    <strings>
+        <!-- Configuration -->
+        <string id="RBM.Conf000" text="RBMコンフィグ" />
+        <string id="RBM.Conf001" text="兵士のオーバーホール" />
+        <string id="RBM.Conf002" text="投射武器の装填速度" />
+        <string id="RBM.Conf003" text="背負った盾の防御効果" />
+        <string id="RBM.Conf004" text="矢の外見の向上" />
+        <string id="RBM.Conf005" text="鎧ステータスGUI" />
+        <string id="RBM.Conf006" text="現実的な弾道" />
+        <string id="RBM.Conf007" text="体幹システム" />
+        <string id="RBM.Conf008" text="プレイヤーの体幹倍率" />
+        <string id="RBM.Conf009" text="体幹ゲージ" />
+        <string id="RBM.Conf010" text="バニラのAIの攻撃・防御" />
+        <string id="RBM.Val001" text="無効{status}" />
+        <string id="RBM.Val002" text="有効{status}" />
+        <string id="RBM.Val003" text="(推奨)" />
+        <string id="RBM.Val004" text="(デフォルト)" />
+        <string id="RBM.Val005" text="バニラ{status}" />
+        <string id="RBM.Val006" text="現実的{status}" />
+        <string id="RBM.Val007" text="半現実的{status}" />
+        <string id="RBM.Val008" text="無効{status}" />
+        <string id="RBM.Val009" text="有効{status}" />
+        <string id="RBM.Val010" text="1倍{status}" />
+        <string id="RBM.Val011" text="1.5倍{status}" />
+        <string id="RBM.Val012" text="2倍{status}" />
+        <string id="RBM.Conf100" text="完了" />
+        <string id="RBM.Conf101" text="キャンセル" />
+        <string id="RBM.Conf200" text="RBMコンバット" />
+        <string id="RBM.Conf201" text="RBM AI" />
+        <string id="RBM.Conf202" text="RBMトーナメント" />
+        <string id="RBM.Conf203" text="モジュールの状態" />
+         <!-- Combat -->
+         <string id="RBM.com000" text="顔面に命中!" />
+         <string id="RBM.com001" text="脇の下に命中!" />
+         <string id="RBM.com002" text="柄頭が命中!" />
+         <string id="RBM.com003" text="柄が命中!" />
+         <string id="RBM.com004" text="足の裏側に命中!" />
+         <string id="RBM.com005" text="ファルクスの部品命中!" />
+         <string id="RBM.com006" text="胸の弱点に命中!" />
+         <string id="RBM.com007" text="肩の弱点に命中!" />
+        <!-- Tournament -->
+        <string id="RBM.Tourney001" text="おめでとう。{name}の品質ロールに成功した。{rollneeded}以上が必要だった。" />
+        <string id="RBM.Tourney002" text="{name}の品質ロールに失敗した。{rollneeded}以上が必要だった。" />
+        <string id="RBM.Tourney003" text="本大会" />
+        <string id="RBM.Tourney004" text="Tier {tier}競技会" />
+        <!-- Posture -->
+        <string id="RBM.Posture000" text="体幹" />
+        <string id="RBM.Posture001" text="(乗騎)" />
+        <string id="RBM.Posture002" text="姿勢を崩した。体幹を失い{damage_amount}ダメージ" />
+        <string id="RBM.Posture003" text="敵の姿勢を崩した。 体幹を失った敵に{damage_amount}ダメージ" />
+        <string id="RBM.Posture004" text="姿勢を崩した。完全なタイミングのパリーで体幹を失った" />
+        <string id="RBM.Posture005" text="姿勢を崩した。完全なタイミングのパリーだが体幹を失い{damage_amount}ダメージ" />
+        <string id="RBM.Posture006" text="敵の姿勢を崩した。完全なタイミングのパリーだが体幹を失い{damage_amount}ダメージ" />
+        <string id="RBM.Posture007" text="姿勢を崩した。異なる方向からの防御で体幹を失った" />
+        <string id="RBM.Posture008" text="姿勢を崩した。適切な方向の防御で体幹を失った" />
+        <string id="RBM.Posture009" text="姿勢を崩した。完全なタイミングと方向のパリーで体幹を失った" />
+        <string id="RBM.Posture010" text="姿勢を崩した。チャンバーブロックで体幹を失った" />
+        <string id="RBM.Posture011" text="姿勢を崩した。チャンバーブロックで体幹を失い{damage_amount}ダメージ" />
+        <string id="RBM.Posture012" text="チャンバーブロックしたが{damage_cmount}ダメージ" />     
+        <!-- Item Stats -->
+        <string id="RBM.Stats000" text="RBMステータス" />
+        <string id="RBM.Stats001" text="最適弾体重量(グラム):" />
+        <string id="RBM.Stats002" text="初速(m/秒):" />
+        <string id="RBM.Stats003" text="依存スキル:" />
+        <string id="RBM.Stats004" text="振り攻撃係数:" />
+        <string id="RBM.Stats005" text="突き攻撃係数:" />
+        <string id="RBM.Stats004" text="振り速度(m/秒):" />
+        <string id="RBM.Stats005" text="突き速度(m/秒):" />
+        <string id="RBM.Stats006" text="最適打点の位置(%):" />
+        <string id="RBM.Stats007" text="マウスオーバーで振りダメージ詳細表示" />
+        <string id="RBM.Stats008" text="マウスオーバーで突きダメージ詳細表示" />
+        <string id="RBM.Stats009" text="頭部の防御力:" />
+        <string id="RBM.Stats010" text="顔面の防御力:" />
+        <string id="RBM.Stats011" text="頸部の防御力:" />
+        <string id="RBM.Stats012" text="肩部の防御力:" />
+        <string id="RBM.Stats013" text="胸部の防御力:" />
+        <string id="RBM.Stats014" text="腹部の防御力:" />
+        <string id="RBM.Stats015" text="前腕の防御力:" />
+        <string id="RBM.Stats016" text="上腕の防御力:" />
+        <string id="RBM.Stats017" text="脚部の防御力:" />
+        <string id="RBM.Stats018" text="盾の防御力:" />
+        <string id="RBM.Stats019" text="弾体の貫通ダメージ" />
+        <string id="RBM.Stats020" text="弾体の斬撃ダメージ" />
+        <string id="RBM.Stats021" text="弾体のダメージ" />
+        <string id="RBM.Stats030" text="A=防御力{newline}D=ダメージ{newline}P=貫通ダメージ{newline}B=打撃ダメージ{newline}" />
+        <string id="RBM.StatsDev000" text="RBM開発用ステータス" />
+        <string id="RBM.StatsDev001" text="スケール%" />
+        <string id="RBM.StatsDev002" text="重量" />
+        <string id="RBM.StatsDev003" text="長さ" />
+        <!-- Combat -->
+    </strings>
+</base>

@@ -1,4 +1,5 @@
-﻿using TaleWorlds.Engine.GauntletUI;
+﻿using TaleWorlds.Core;
+using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View.Screens;
@@ -90,7 +91,7 @@ namespace RBMAI
 
                 if (affectedAgent.IsMount)
                 {
-                    _dataSource.EnemyName = affectedAgent.RiderAgent?.Name + " (Mount)";
+                    _dataSource.EnemyName = affectedAgent.RiderAgent?.Name + GameTexts.FindText("str_rbm_posture", "mount");
                 }
                 else
                 {

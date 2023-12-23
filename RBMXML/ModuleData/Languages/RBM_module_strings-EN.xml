@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<base>
+    <tags>
+     <tag language="English"/>
+    </tags>
+    <strings>
+        <!-- Configuration -->
+        <string id="RBM.Conf000" text="RBM Configuration" />
+        <string id="RBM.Conf001" text="Troop Overhaul" />
+        <string id="RBM.Conf002" text="Ranged reload speed" />
+        <string id="RBM.Conf003" text="Passive Shoulder Shields" />
+        <string id="RBM.Conf004" text="Better Arrow Visuals" />
+        <string id="RBM.Conf005" text="Armor Status GUI" />
+        <string id="RBM.Conf006" text="Realistic Arrow Arc" />
+        <string id="RBM.Conf007" text="Posture System" />
+        <string id="RBM.Conf008" text="Player Posture Multiplier" />
+        <string id="RBM.Conf009" text="Posture GUI" />
+        <string id="RBM.Conf010" text="Vanilla AI Block/Parry/Attack" />
+        <string id="RBM.Val001" text="Inactive{status}" />
+        <string id="RBM.Val002" text="Active{status}" />
+        <string id="RBM.Val003" text=" (Recommended)" />
+        <string id="RBM.Val004" text=" (Default)" />
+        <string id="RBM.Val005" text="Vanilla{status}" />
+        <string id="RBM.Val006" text="Realistic{status}" />
+        <string id="RBM.Val007" text="Semi-Realistic{status}" />
+        <string id="RBM.Val008" text="Disabled{status}" />
+        <string id="RBM.Val009" text="Enabled{status}" />
+        <string id="RBM.Val010" text="1x{status}" />
+        <string id="RBM.Val011" text="1.5x{status}" />
+        <string id="RBM.Val012" text="2x{status}" />
+        <string id="RBM.Conf100" text="Done" />
+        <string id="RBM.Conf101" text="Cancel" />
+        <string id="RBM.Conf200" text="RBM Combat" />
+        <string id="RBM.Conf201" text="RBM AI" />
+        <string id="RBM.Conf202" text="RBM Tournament" />
+        <string id="RBM.Conf203" text="Module Status" />
+        <!-- Tournament -->
+        <string id="RBM.Tourney001" text="Congratulations, you successfully rolled for {name} item modifier, rolled: {roll} needed: {rollneeded}" />
+        <string id="RBM.Tourney002" text="You missed roll for {name} item modifier, rolled: {roll} needed: {rollneeded}" />
+        <string id="RBM.Tourney003" text="Main Tournament" />
+        <string id="RBM.Tourney004" text="Lower tier tournament: Tier {tier}" />
+        <!-- Combat -->
+        <string id="RBM.com000" text="Face Hit!" />
+        <string id="RBM.com001" text="Under shoulder hit!" />
+        <string id="RBM.com002" text="Pommel hit!" />
+        <string id="RBM.com003" text="Handle hit!" />
+        <string id="RBM.com044" text="Back leg hit!" />
+        <string id="RBM.com005" text="Falx piece hit!" />
+        <string id="RBM.com006" text="Chest weak point hit!" />
+        <string id="RBM.com007" text="Shoulder weak point hit!" />
+        <!-- Posture -->
+        <string id="RBM.Posture000" text="Posture" />
+        <string id="RBM.Posture001" text=" (Mount)" />
+        <string id="RBM.Posture002" text="Posture break: Posture depleted {damage_amount} damage crushed through" />
+        <string id="RBM.Posture003" text="Enemy Posture break: Posture depleted {damage_amount} damage crushed through" />
+        <string id="RBM.Posture004" text="Posture break: Posture depleted, perfect parry" />
+        <string id="RBM.Posture005" text="Posture break: Posture depleted, perfect parry, {damage_amount} damage crushed through" />
+        <string id="RBM.Posture006" text="Enemy Posture break: Posture depleted, perfect parry, {damage_amount} damage crushed through" />
+        <string id="RBM.Posture007" text="Posture break: Posture depleted, incorrect side block" />
+        <string id="RBM.Posture008" text="Posture break: Posture depleted, correct side block" />
+        <string id="RBM.Posture009" text="Posture break: Posture depleted, perfect parry, correct side block" />
+        <string id="RBM.Posture010" text="Posture break: Posture depleted, chamber block" />
+        <string id="RBM.Posture011" text="Posture break: Posture depleted, chamber block {damage_amount} damage crushed through" />
+        <string id="RBM.Posture012" text="Chamber block {damage_cmount} damage crushed through" />        
+        <!-- Item Stats -->
+        <string id="RBM.Stats000" text="RBM Stats" />
+        <string id="RBM.Stats001" text="Ideal Ammo Weight Range/Damage, grams:" />
+        <string id="RBM.Stats002" text="Initial Missile Speed, m/s:" />
+        <string id="RBM.Stats003" text="Relevant Skill:" />
+        <string id="RBM.Stats004" text="Swing Damage Factor:" />
+        <string id="RBM.Stats005" text="Thrust Damage Factor:" />
+        <string id="RBM.Stats004" text="Swing Speed, m/s:" />
+        <string id="RBM.Stats005" text="Thrust Speed, m/s:" />
+        <string id="RBM.Stats006" text="Swing Sweet Spot, %:" />
+        <string id="RBM.Stats007" text="Swing Damage (Hover)" />
+        <string id="RBM.Stats008" text="Thrust Damage (Hover)" />
+        <string id="RBM.Stats009" text="Head Armor:" />
+        <string id="RBM.Stats010" text="Face Armor:" />
+        <string id="RBM.Stats011" text="Neck Armor:" />
+        <string id="RBM.Stats012" text="Shoulder Armor:" />
+        <string id="RBM.Stats013" text="Chest Armor:" />
+        <string id="RBM.Stats014" text="Abdomen Armor:" />
+        <string id="RBM.Stats015" text="Arm Armor:" />
+        <string id="RBM.Stats016" text="Lower Shoulder Armor:" />
+        <string id="RBM.Stats017" text="Legs Armor:" />
+        <string id="RBM.Stats018" text="Shield Armor:" />
+        <string id="RBM.Stats019" text="Missile Damage Pierce" />
+        <string id="RBM.Stats020" text="Missile Damage Cut" />
+        <string id="RBM.Stats021" text="Missile Damage" />
+        <string id="RBM.Stats030" text="A-Armor\nD-Damage Inflicted\nP-Penetrated Damage\nB-Blunt Focre Trauma\n" />
+        <string id="RBM.StatsDev000" text="RBM Developer Stats" />
+        <string id="RBM.StatsDev001" text="Scale Percentage:" />
+        <string id="RBM.StatsDev002" text="Weight" />
+        <string id="RBM.StatsDev003" text="Length" />
+        <!-- Combat -->
+    </strings>
+</base>

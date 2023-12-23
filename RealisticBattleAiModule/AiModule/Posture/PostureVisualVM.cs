@@ -2,12 +2,11 @@
 {
     // MBTargetEnemyStatus.TargetEnemyStatusVM
     using TaleWorlds.Library;
-
+    using TaleWorlds.Localization;
+    
     public class PostureVisualVM : ViewModel
     {
         private string enemyName = "";
-
-        private string postureLabel = "Posture";
 
         private bool showEnemyStatus = false;
 
@@ -41,19 +40,7 @@
         }
 
         [DataSourceProperty]
-        public string PostureLabel
-        {
-            get
-            {
-                return postureLabel;
-            }
-            set
-            {
-                postureLabel = value;
-                OnPropertyChanged("PostureLabel");
-                //OnPropertyChanged("DisplayText");
-            }
-        }
+        public string PostureLabel => new TextObject("{=RBM.Posture000}Posture").ToString();
 
         //public string DisplayText => enemyName + $" ({enemyHealth}/{enemyHealthMax})" + $" ({enemyPosture}/{enemyPostureMax})" + $" ({playerPosture}/{playerPostureMax})";
 

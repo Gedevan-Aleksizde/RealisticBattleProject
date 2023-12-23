@@ -86,12 +86,11 @@ namespace RBM
         protected override void OnSubModuleLoad()
         {
             RBMConfig.RBMConfig.LoadConfig();
-            //ApplyHarmonyPatches();
-
-            TaleWorlds.MountAndBlade.Module.CurrentModule.AddInitialStateOption(new InitialStateOption("RbmConfiguration", GameTexts.FindText("str_rbm_menu", "title"), 9999, delegate
+            // TODO: Why FindText not working on main menu? what for purpose? why, on the other hand, TextObject work? nonsence...
+            Module.CurrentModule.AddInitialStateOption(new InitialStateOption("RbmConfiguration", new TextObject("{=RBM.Conf000}RBM Configuration"), 9999, delegate
             {
                 ScreenManager.PushScreen(new RBMConfig.RBMConfigScreen());
-            }, () => (false, GameTexts.FindText("str_rbm_menu", "title"))));
+            }, () => (false, new TextObject("{=RBM.Conf000}RBM Configuration"))));
         }
 
         protected override void OnApplicationTick(float dt)
