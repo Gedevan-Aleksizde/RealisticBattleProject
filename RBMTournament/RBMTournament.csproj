@@ -68,11 +68,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Bannerlord.Lib.Harmony">
+      <Version>2.2.2</Version>
+    </PackageReference>
     <PackageReference Include="Bannerlord.ReferenceAssemblies">
       <Version>1.2.8.31530</Version>
-    </PackageReference>
-    <PackageReference Include="Lib.Harmony">
-      <Version>2.2.2</Version>
     </PackageReference>
   </ItemGroup>
   <!-- Post-Build -->
