@@ -1170,20 +1170,20 @@ namespace RBMCombat
                     float abdomenArmor = ArmorRework.GetBaseArmorEffectivenessForBodyPartRBMHuman(equipment, BoneBodyPartType.Abdomen);
                     float legsArmor = ArmorRework.GetBaseArmorEffectivenessForBodyPartRBMHuman(equipment, BoneBodyPartType.Legs);
 
-                    combinedHeadString += String.Format("{0,-32}", GetArmorLabel("head_armor")) + headArmor + "\n";
+                    combinedHeadString += String.Format("{0,-28}", GetArmorLabel("head_armor")) + headArmor + "\n";
                     if (!equipment[EquipmentIndex.Head].IsEmpty)
                     {
                         float faceArmor = equipment[EquipmentIndex.Head].GetModifiedBodyArmor();
 
-                        combinedHeadString += String.Format("{0,-33}", GetArmorLabel("face_armor")) + faceArmor + "\n";
+                        combinedHeadString += String.Format("{0,-28}", GetArmorLabel("face_armor")) + faceArmor + "\n";
                     }
-                    combinedHeadString += String.Format("{0,-32}", GetArmorLabel("neck_armor")) + neckArmor;
+                    combinedHeadString += String.Format("{0,-28}", GetArmorLabel("neck_armor")) + neckArmor;
 
                     combinedBodyString += String.Format("{0,-28}", GetArmorLabel("shoulder_armor")) + shoulderArmor + "\n";
-                    combinedBodyString += String.Format("{0,-32}", GetArmorLabel("chest_armor")) + chestArmor + "\n";
-                    combinedBodyString += String.Format("{0,-27}", GetArmorLabel("abdomen_armor")) + abdomenArmor;
+                    combinedBodyString += String.Format("{0,-28}", GetArmorLabel("chest_armor")) + chestArmor + "\n";
+                    combinedBodyString += String.Format("{0,-28}", GetArmorLabel("abdomen_armor")) + abdomenArmor;
 
-                    combinedArmString += String.Format("{0,-33}", GetArmorLabel("arm_armor")) + armArmor + "\n";
+                    combinedArmString += String.Format("{0,-28}", GetArmorLabel("arm_armor")) + armArmor + "\n";
                     if (!equipment[EquipmentIndex.Body].IsEmpty)
                     {
                         float underShoulderArmor = (equipment[EquipmentIndex.Body].GetModifiedArmArmor());
@@ -1191,10 +1191,10 @@ namespace RBMCombat
                         {
                             underShoulderArmor += equipment[EquipmentIndex.Cape].GetModifiedArmArmor();
                         }
-                        combinedArmString += String.Format("{0,-21}", GetArmorLabel("lower_shoulder_armor")) + underShoulderArmor;
+                        combinedArmString += String.Format("{0,-28}", GetArmorLabel("lower_shoulder_armor")) + underShoulderArmor;
                     }
 
-                    combinedLegString += String.Format("{0,-33}", GetArmorLabel("lower_legs_armor")) + legsArmor;
+                    combinedLegString += String.Format("{0,-28}", GetArmorLabel("lower_legs_armor")) + legsArmor;
                 }
             }
         }
