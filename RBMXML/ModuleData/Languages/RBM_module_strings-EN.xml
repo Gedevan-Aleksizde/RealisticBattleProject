@@ -88,6 +88,7 @@
         <string id="RBM.Stats020" text="Missile Damage Cut" />
         <string id="RBM.Stats021" text="Missile Damage" />
         <string id="RBM.Stats030" text="A-Armor\nD-Damage Inflicted\nP-Penetrated Damage\nB-Blunt Focre Trauma\n" />
+        <string id="RBM.Stats031" text="Draw weight with modifier:" />
         <string id="RBM.StatsDev000" text="RBM Developer Stats" />
         <string id="RBM.StatsDev001" text="Scale Percentage:" />
         <string id="RBM.StatsDev002" text="Weight" />

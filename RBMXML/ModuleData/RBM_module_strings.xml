@@ -87,6 +87,7 @@
         <string id="str_rbm_item_stats.missile_dmg_cut" text="{=RBM.Stats020}Missile Damage Cut" />
         <string id="str_rbm_item_stats.missile_dmg" text="{=RBM.Stats021}Missile Damage" />
         <string id="str_rbm_item_stats.damage_detail_header" text="{=RBM.Stats030}A-Armor\nD-Damage Inflicted\nP-Penetrated Damage\nB-Blunt Focre Trauma\n" />
+        <string id="str_rbm_item_stats.draw_weight_modifier" text="{=RBM.Stats031}Draw weight with modifier:" />
 
         <string id="str_rbm_item_stats_dev.title" text="{=RBM.StatsDev000}RBM Developer Stats" />
         <string id="str_rbm_item_stats_dev.scale_percent" text="{=RBM.StatsDev001}Scale Percentage: {value}" />

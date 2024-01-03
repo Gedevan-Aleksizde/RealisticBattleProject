@@ -885,7 +885,7 @@ namespace RBMCombat
 
                             methodAddIntProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "weight_range_dmg"), MathF.Round(ammoWeightIdeal * 1000f), MathF.Round(ammoWeightIdeal * 1000f) });
                             methodAddIntProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "missile_speed"), calculatedMissileSpeed, calculatedMissileSpeed });
-                            methodAddIntProperty.Invoke(__instance, new object[] { new TextObject("Draw weight with modifier: "), drawWeight, drawWeight });
+                            methodAddIntProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "draw_weight_modifier"), drawWeight, drawWeight });
 
                             //pierceArrows
                             bool shouldBreakNextTime = false;
@@ -953,7 +953,7 @@ namespace RBMCombat
 
                             methodAddIntProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "weight_range_dmg"), MathF.Round(ammoWeightIdeal * 1000f), MathF.Round(ammoWeightIdeal * 1000f) });
                             methodAddIntProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "missile_speed"), calculatedMissileSpeed, calculatedMissileSpeed });
-                            methodAddIntProperty.Invoke(__instance, new object[] { new TextObject("Draw weight with modifier: "), drawWeight, drawWeight });
+                            methodAddIntProperty.Invoke(__instance, new object[] { GameTexts.FindText("str_rbm_item_stats", "draw_weight_modifier"), drawWeight, drawWeight });
 
                             //pierce bolts
                             bool shouldBreakNextTime = false;

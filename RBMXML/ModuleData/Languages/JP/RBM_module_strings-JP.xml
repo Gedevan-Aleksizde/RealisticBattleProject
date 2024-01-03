@@ -88,6 +88,7 @@
         <string id="RBM.Stats020" text="マウスオーバーで弾体の斬撃ダメージ詳細表示" />
         <string id="RBM.Stats021" text="マウスオーバーで弾体のダメージ詳細表示" />
         <string id="RBM.Stats030" text="A=防御力{newline}D=ダメージ{newline}P=貫通ダメージ{newline}B=打撃ダメージ{newline}" />
+        <string id="RBM.Stats031" text="補正後の弓力:" />
         <string id="RBM.StatsDev000" text="RBM開発用ステータス" />
         <string id="RBM.StatsDev001" text="スケール%" />
         <string id="RBM.StatsDev002" text="重量" />
