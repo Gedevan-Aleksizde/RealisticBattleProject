@@ -904,7 +904,7 @@ namespace RBMCombat
                                 }
                             case "Javelin":
                                 {
-                                    localInflictedDamage *= 20f;
+                                    localInflictedDamage *= 25f;
                                     break;
                                 }
                             case "ThrowingAxe":
