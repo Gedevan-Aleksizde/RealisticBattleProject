@@ -72,7 +72,7 @@
       <Version>2.2.2</Version>
     </PackageReference>
     <PackageReference Include="Bannerlord.ReferenceAssemblies">
-      <Version>1.2.8.31530</Version>
+      <Version>1.2.9.33689</Version>
     </PackageReference>
   </ItemGroup>
   <!-- Post-Build -->
