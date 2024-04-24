@@ -105,7 +105,8 @@ xcopy /d /y "$(SolutionDir)RBMXML\ModuleData\RBM_module_strings.xml" "$(Solution
 xcopy /d /y "$(SolutionDir)RBMXML\ModuleData\project.mbproj" "$(SolutionDir)..\RBM\ModuleData\"
 xcopy /y /s /e "$(SolutionDir)RBMXML\ModuleData\Languages" "$(SolutionDir)..\RBM\ModuleData\Languages"
 xcopy /d /y "$(SolutionDir)RBMXML\GUI\Prefabs\" "$(SolutionDir)..\RBM\GUI\Prefabs\"
-xcopy /d /y "$(SolutionDir)RBMXML\GUI\Brushes\" "$(SolutionDir)..\RBM\GUI\Brushes\"</PostBuildEvent>
+xcopy /d /y "$(SolutionDir)RBMXML\GUI\Brushes\" "$(SolutionDir)..\RBM\GUI\Brushes\"
+del "$(SolutionDir)..\RBM\bin\Win64_Shipping_Client\0Harmony.dll"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
